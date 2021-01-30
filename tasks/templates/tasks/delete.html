@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    body {
+        background-color: #638CB8;
+    }
+    
+    .submit {
+        background-color: #6BA3E8;
+    }
+    
+    .center-column {
+        width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+    }
+    
+    .item-row {
+        background-color: #906abd;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 16px;
+        box-shadow: 0px -1px 10px -4px rgba(0, 0, 0, 0.75);
+    }
+    
+    .btn-danger {
+        background-color: #ffae19;
+        border-color: #e59400;
+    }
+    
+    p {
+        color: blue;
+        font-size: 20px;
+    }
+    
+    i {
+        color: red;
+        font-size: 20px;
+    }
+</style>
+<div class="center-column">
+    <p><b>Are you sure you want to delete "<i>{{item}}</i>"?</b></p>
+
+    <div class="item-row">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <a class="btn btn-lm btn-danger" href="{% url 'list' %}">Cancel</a>
+            <input class="btn btn-lm btn-info" type="submit" name="Confirm">
+    </div>
+</div>
+</form>
